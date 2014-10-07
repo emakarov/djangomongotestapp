@@ -5,9 +5,9 @@ import datetime
 # Create your models here.
 
 class Log(Document):
-    data = fields.StringField(max_length=200, required=True)
+    data = fields.FloatField(required=True)
     ts = fields.DateTimeField(default=datetime.datetime.now)
-    location = fields.GeoPointField(auto_index=False)
+    location = fields.GeoPointField(required=False)
 
     
 
