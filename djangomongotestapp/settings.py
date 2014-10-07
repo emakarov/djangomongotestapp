@@ -26,7 +26,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -36,9 +35,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mongoengine.django.mongo_auth',
 
     'timeseriesdata',
+
+    'tastypie',
+    'tastypie_mongoengine',
 )
+
+AUTH_USER_MODEL = 'mongo_auth.MongoUser'
+
 
 MIDDLEWARE_CLASSES = (
  #    'django.contrib.sessions.middleware.SessionMiddleware',
@@ -65,6 +71,7 @@ DATABASES = {
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+MONGO_DATABASE_NAME = 'test'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -86,4 +93,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 import mongoengine
-mongoengine.connect('test')
+mongoengine.connect(MONGO_DATABASE_NAME)

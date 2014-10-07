@@ -9,3 +9,7 @@ urlpatterns = patterns('',
     url(r'^$', 'timeseriesdata.views.index', name='index'),
     url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += patterns('',
+    (r'^api/',include('apiurls')),
+)
