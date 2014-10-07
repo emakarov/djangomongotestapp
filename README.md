@@ -11,3 +11,7 @@ Django Mongoengine Test Application
 6. Run command:
 python manage.py fillsampledata 
 This command is adding 1000 new random samples to the database 
+7. Run the server:
+python manage.py runserver 0.0.0.0:8000
+8. API for the data:
+http://127.0.0.1:8000/api/v1/timeseriesdata/log/?format=json
